@@ -37,33 +37,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
           child: Column(children: [
-        FlatButton(
+        FlatButtons(
             color: Colors.green,
-            child: Container(
-                width: double.infinity * 0.5,
-                padding: const EdgeInsets.symmetric(vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text('Pagar',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 19,
-                            fontFamily: 'raleway')),
-                    const SizedBox(width: 10),
-                    Text('1000 USD',
-                        style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 23,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'raleway'))
-                  ],
-                )),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),
-            onPressed: () {}),
-        RaisedButtons(
-            color: Colors.green,
+            function: () {},
             child: Container(
                 width: double.infinity * 0.5,
                 padding: const EdgeInsets.symmetric(vertical: 10),
@@ -83,10 +61,32 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontWeight: FontWeight.bold,
                             fontFamily: 'raleway'))
                   ],
-                )),
+                ))),
+        RaisedButtons(
+            color: Colors.green,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),
-            onPressed: () {})
+            onPressed: () {},
+            child: Container(
+                width: double.infinity * 0.5,
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text('Pagar',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 19,
+                            fontFamily: 'raleway')),
+                    SizedBox(width: 10),
+                    Text('1000 USD',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 23,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'raleway'))
+                  ],
+                )))
       ])),
     );
   }

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class FlatButtons extends StatelessWidget {
   final Widget _child;
-  Function _function;
-  OutlinedBorder? _shape;
-  Color? _color;
-  FlatButtons(
+  final Function _function;
+  final OutlinedBorder? _shape;
+  final Color? _color;
+  const FlatButtons(
       {Key? key,
       required Widget child,
       required Function function,
@@ -21,18 +21,18 @@ class FlatButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () => _function(),
-      child: _child,
       style: TextButton.styleFrom(primary: _color, shape: _shape),
+      child: _child,
     );
   }
 }
 
 class RaisedButtons extends StatelessWidget {
   final Widget _child;
-  Function _onPressed;
-  OutlinedBorder? _shape;
-  Color? _color;
-  RaisedButtons(
+  final Function _onPressed;
+  final OutlinedBorder? _shape;
+  final Color? _color;
+  const RaisedButtons(
       {Key? key,
       required Widget child,
       required Function onPressed,
