@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:challenge_app/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -66,7 +69,13 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.green,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const WebViewPage(),
+                ),
+              );
+            },
             child: Container(
                 width: double.infinity * 0.5,
                 padding: const EdgeInsets.symmetric(vertical: 10),
@@ -93,5 +102,29 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void prueba() {
     print('este si funca aca');
+  }
+}
+
+class WebViewPage extends StatefulWidget {
+  const WebViewPage({Key? key}) : super(key: key);
+
+  @override
+  State<WebViewPage> createState() => _WebViewPageState();
+}
+
+class _WebViewPageState extends State<WebViewPage> {
+  @override
+  void initState() {
+    super.initState();
+    // Enable virtual display.
+    if (Platform.isAndroid) WebView.platform = AndroidWebView();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const WebView(
+      initialUrl: 'https://flutter.dev',
+      //navigationDelegate: ,
+    );
   }
 }
