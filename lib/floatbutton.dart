@@ -36,20 +36,19 @@ class UnicornButton extends FloatingActionButton {
             boxShadow: labelHasShadow
                 ? [
                     BoxShadow(
-                      color: labelShadowColor ??
-                          Color.fromRGBO(204, 204, 204, 1.0),
+                      color: labelShadowColor,
                       blurRadius: 3.0,
                     ),
                   ]
                 : null,
-            color: labelBackgroundColor ?? Colors.white,
+            color: labelBackgroundColor,
             borderRadius: BorderRadius.circular(3.0)), //color: Colors.white,
         padding: const EdgeInsets.all(9.0),
         child: Text(labelText,
             style: TextStyle(
                 fontSize: labelFontSize,
                 fontWeight: FontWeight.bold,
-                color: labelColor ?? Color.fromRGBO(119, 119, 119, 1.0))));
+                color: labelColor)));
   }
 
   @override
